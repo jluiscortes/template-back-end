@@ -1,0 +1,17 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  use-template:
+    uses: jluiscortes/template-back-end/.github/workflows/ci-cd-template.yml@main
+    with:
+      node-version: "18.x"
+      app-name: "example-backend"
